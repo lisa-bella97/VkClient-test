@@ -4,27 +4,27 @@ language: generic
 
 matrix:
   include:
-    - os: linux
-      sudo: required
-      env: COMPILER_NAME=gcc CXX=g++-5 CC=gcc-5
-      addons:
-        apt:
-          packages:
-            - g++-5
-            - cmake
-          sources: &sources
-            - llvm-toolchain-precise
-            - ubuntu-toolchain-r-test
-    #- os: osx
-      #compiler: clang-3.8
-      #env: COMPILER="clang++-3.8" -std=c++11 OPENSSL_ROOT_DIR="/usr/local/opt/openssl"
+    #- os: linux
+      #sudo: required
+      #env: COMPILER_NAME=gcc CXX=g++-5 CC=gcc-5
+      #addons:
+        #apt:
+          #packages:
+            #- g++-5
+            #- cmake
+          #sources: &sources
+            #- llvm-toolchain-precise
+            #- ubuntu-toolchain-r-test
+    - os: osx
+      compiler: clang-3.8
+      env: COMPILER="clang++-3.8" -std=c++11 OPENSSL_ROOT_DIR="/usr/local/opt/openssl"
 
 env:
   global:
     - secure: "Qxv4DzZZ+NAniw9Lxv5FUm9A35b2OEGdiUDMnSr94OLxAWlAvvtZ5cKdnvk+97JIFGDtPryz45JTGyZY7lyiL8wVPXADf9S7pIK4GjzspOlzQOnm4XepM5UO3BIfXVV5Zld7aqLRtlj0bDtvfZzE04FvZD3HNuG8eC+PnQMfrptG3AHpzT96Yxe2Ef733JrnTZ/0WV2uM1slqkDIHm3rp/UAEYE1U5dOcw0a4OhnccPdOHuf/eNLlsQkGhLbN0V/e0sWkL5j/Eoex7jxZnvLGJ+Qyfspn0yBEJgXXFcWcwmrhQprCUFcjbrBoaGtiXkTHaPjXSKU5zyJobAn22K55VoNezK+A+JzTGudEbh5+UqBPcjZHaexwQNxz7+GNo8haZajpuF5K5kE6i3/IoI8OkfI38XFt9Lfcq4KQz1AblcQqO2EQukzHEXr3ivDgmwL08gm2mx4l8oPjM5YxZGw0Y6RZvSxVgDYRCDXi9O3Hf9oJ7+pHXvoisof57seaipbyBIkQIRw69PD/u/aX5Azf9MlHLsXj06pIMzUkFBI9DibLJz+RQUGsz0dfAM2kh3hRHFB1Xg9QnPpQ3aMgoX9Ncl7l+CsX6iVe9w9O56SFEn079Y+Hcd+Mgd+UJCqUU3ApdMz/hWdIHrT39xObBLnRvK3nPS3y3+a6OWgqAjTTTY="
-    - secure: "FfjQJdD5wYK9N+aNrSB+hBVVYtVWfbzIjlHi3I5f2MfNZDwnf8JBAh8PlX4U9rZ97sKuYN9jSw2rwb9du2FLSh8EHbXWs4+37Ryc8yUL8xiyq6LBn94OwyOTBZEN7D8y5WJrYfQfwkEorLpXZVUHwLQqz/OJKow7Ww56ETpL4uEc5Gx0Eu9J3wvJo7Q5jRFmlhNbEU/ApXPVcsEbJ8yogerJyRa7eUGtORw/Ugq//JoX+QLrUKwY0tRDHs+Ww7G59in0KZxGczaxM5TwJDEV2QxHTFKaE6iQtiGbUN5+zoWgq3im4xqjfMhIkzl+GGM/kQleIfzc2iJ33R12AV+ubUResXdMipmJLYcKEwCKrpaQKEYbGJvlF+/WezxRH/+reU5rjM3z+NHN7bzAWu4704xO/kVKmh+TOsT6PBdrb6jE7+MbmLmdBJ5heXg54B4ADGCkYCzd7UHaCjOrcp6j90DVKLY717nCMA5wiJc7pLsDs3QP3yRZaKvoZZbEIaYdYFih47u9ZZ9QWrmOCjOorFcRfVuJLnC+8ibTFes7ZgNRZNP6NrB4Z4oqcWgj+pHHKwF2cVrbZZ4lpfXudIO68xJtkoG7cXhhZKjE8mJ59kqFKOp4wGwLq+vyaQOgX9i4CVanqpvqBXqwJurFkStUk2veJR9lXPnftU0gfYI3QoE="
+    - secure: "hUEtAUp0MZ3i2AT5RKqCBvbsf3LMxCEhSx0hag+ImCyPSVKPHwNPpVR0hY5fAFLBKaHCBBU87RWBTzU2ei9ZwA3G1ZVdjdU6wmEoalgspFC+0u7TX30A1GEyMBcYXDOJTFWLuECiJP3LBQziNjvKoYQPQ7PLu0Q75JP+U5kt5qlUFDvHbwvHlGwVQBAG3wZm7nFPcruAU7z0/k29F+e3KmqRvMDsHv/sbpH1fXH/uko7zjB1NeyQJuUA+acOKZtq2UvWEu8PU0A87XWONYQxyDcR3gP/GBueq5P2yC8Q+c14dvDOriPmbCqTnkcPpuMpx86nJFxJc4BDwpzBtMxYhucVHI7xob+X1l2emd1hXIZbFi+i86hFqys/aoAe/cP8Ti99kHRXhgzNy7nIMUMD+/ut7FJuvJRLjw66owlpMNbPUhew2prEXb72+wTfiWZd2rftJhyNWfyM4+5iZMmxCOsSXYpQnlK+cwDHP485+7HCNGVZlqX6+XgXXQK2ntDgc4zs4YIJKCUS4qVDpFIGOe/70wKn3U0210+HA+7IvcGRiJ71F0nSINS7JBv4QQtExN/gAzgLhoZ886o2GC1XhkoEdaWoLaU5yg7XaYRpYcS91tYytSHEXKvCN9fGrPMMxb48BJZE3TcbRnraKE1w7ZzAwPYF3sgfdDpqVzeJ0LA="
 
 script:
   - mkdir build && cd build
   - cmake .. -DOPENSSL_ROOT_DIR=/usr/local/ssl -DOPENSSL_LIBRARIES=/usr/local/ssl/lib && make
-  #- ./check -s -r compact
+  - ./check -s -r compact
