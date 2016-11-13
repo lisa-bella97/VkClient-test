@@ -3,6 +3,7 @@ language: generic
 addons:
   apt:
     packages:
+      - ccache
       - clang-3.8
       - g++-5
       - cmake
@@ -28,4 +29,4 @@ env:
 script:
   - mkdir build && cd build
   - cmake .. && make
-  - ./check -s -r compact
+  #- ./check -s -r compact
