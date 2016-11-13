@@ -12,7 +12,6 @@ namespace Vk
         {
 #ifdef USE_AUTH_CODE_FLOW
             std::string fields = "client_id=5682862&client_secret=" + std::string(getenv("CL_SECRET")) +"&redirect_uri=https://oauth.vk.com/blank.html&code=" + _code;
-            //std::string fields = "client_id=5682862&client_secret=qqroU6AvxyzCUoBBE1RU&redirect_uri=https://oauth.vk.com/blank.html&code=" + _code;
             std::string buffer = "";
 
             curl_easy_setopt(_curl, CURLOPT_URL, "https://oauth.vk.com/access_token?");
@@ -24,7 +23,6 @@ namespace Vk
 
             if (curl_easy_perform(_curl) == CURLE_OK)
             {
-                std::cout << buffer << std::endl;
                 json jsn_token = (json::parse(buffer))["access_token"];
 
                 if (!jsn_token.is_null())

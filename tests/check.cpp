@@ -26,7 +26,6 @@ SCENARIO("client must check connection using an authorization code")
 
         WHEN("initialize client")
         {
-            std::cout << valid_code << std::endl;
             Vk::Client client(valid_code);
 
             THEN("check_connection() must return true")
