@@ -27,4 +27,4 @@ env:
 script:
   - mkdir build && cd build
   - cmake .. -DOPENSSL_ROOT_DIR=/usr/local/ssl -DOPENSSL_LIBRARIES=/usr/local/ssl/lib && make
-  - ./check -s -r compact
+  #- ./check -s -r compact
